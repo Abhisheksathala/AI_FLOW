@@ -20,7 +20,7 @@ app.use("/", ConvRoute);
 
 ConnectDb()
   .then(() => {
-    app.get('/get',(req,res)=>{
+    app.get('/',(req,res)=>{
       res.send("hello bro")
     })
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
