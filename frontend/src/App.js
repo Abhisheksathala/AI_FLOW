@@ -16,16 +16,8 @@ import { Handle, Position } from "reactflow";
 import {
   FiPlay,
   FiSave,
-  FiHome,
-  FiShoppingBag,
-  FiZap,
-  FiMail,
-  FiArrowLeft,
-  FiShoppingCart,
-  FiStar,
-  FiTrendingUp,
 } from "react-icons/fi";
-import { MdStorefront, MdLocalFireDepartment, MdStore } from "react-icons/md";
+import { MdStore } from "react-icons/md";
 
 function InputNode({ data }) {
   return (
