@@ -66,7 +66,7 @@ Make sure you have these installed before starting:
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Abhisheksathala/AI_FLOW
 cd ai-flow-app
 ```
 
