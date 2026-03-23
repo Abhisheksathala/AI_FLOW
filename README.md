@@ -18,15 +18,34 @@ A visual AI chat tool built with React Flow where you type a prompt into a node,
 ```
 ai-flow-app/
 ├── backend/
+│   ├── package.json
+│   ├── pnpm-lock.yaml
 │   ├── server.js
-│   ├── .env
-│   └── package.json
-└── frontend/
-    ├── src/
-    │   ├── App.js
-    │   ├── App.css
-    │   └── StorePage.js
-    └── package.json
+│   └── src/
+│       ├── DB/
+│       │   └── CennectoDbInsatnce.js
+│       ├── models/
+│       │   └── ConversationModel.js
+│       └── Routes/
+│           └── Router.js
+├── frontend/
+│   ├── package.json
+│   ├── pnpm-lock.yaml
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   └── src/
+│       ├── App.css
+│       ├── App.js
+│       ├── App.test.js
+│       ├── index.js
+│       ├── InputNode.js
+│       ├── reportWebVitals.js
+│       ├── ResultNode.js
+│       ├── setupTests.js
+│       └── StorePage.js
+└── README.md
 ```
 
 ---
@@ -36,6 +55,7 @@ ai-flow-app/
 Make sure you have these installed before starting:
 
 - [Node.js](https://nodejs.org/) (v16 or higher)
+- [pnpm](https://pnpm.io/) (package manager)
 - [MongoDB](https://www.mongodb.com/try/download/community) (local) **or** a free [MongoDB Atlas](https://www.mongodb.com/atlas) cluster
 - An [OpenRouter](https://openrouter.ai/) account with a free API key
 
@@ -46,7 +66,7 @@ Make sure you have these installed before starting:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/himanshu12sh/ai-flow-app
+git clone <repository-url>
 cd ai-flow-app
 ```
 
@@ -56,7 +76,7 @@ cd ai-flow-app
 
 ```bash
 cd backend
-npm install
+pnpm install
 ```
 
 Create a `.env` file inside the `backend/` folder:
@@ -78,7 +98,7 @@ PORT=5000
 
 ```bash
 cd ../frontend
-npm install
+pnpm install
 ```
 
 ---
@@ -97,7 +117,7 @@ mongod
 
 ```bash
 cd backend
-node server.js
+pnpm run dev
 ```
 
 You should see:
@@ -110,7 +130,7 @@ MongoDB connected
 
 ```bash
 cd frontend
-npm start
+pnpm start
 ```
 
 The app will open at **http://localhost:3000**
@@ -151,8 +171,8 @@ The app will open at **http://localhost:3000**
 2. Go to [render.com](https://render.com) → New → Web Service
 3. Connect your GitHub repo
 4. Set **Root Directory** to `backend`
-5. Set **Build Command** to `npm install`
-6. Set **Start Command** to `node server.js`
+5. Set **Build Command** to `pnpm install`
+6. Set **Start Command** to `pnpm run start`
 7. Add environment variables:
    - `OPENROUTER_API_KEY`
    - `MONGODB_URI` (use MongoDB Atlas URI for production)
@@ -163,7 +183,7 @@ The app will open at **http://localhost:3000**
 1. Go to [render.com](https://render.com) → New → Static Site
 2. Connect your GitHub repo
 3. Set **Root Directory** to `frontend`
-4. Set **Build Command** to `npm install && npm run build`
+4. Set **Build Command** to `pnpm install && pnpm run build`
 5. Set **Publish Directory** to `build`
 6. Update the API URLs in `App.js` and `StorePage.js` from `http://localhost:5000` to your Render backend URL
 
