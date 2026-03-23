@@ -120,7 +120,7 @@ function App() {
     setSaveStatus("");
     updateResult("Thinking...");
     try {
-      const res = await axios.post("http://localhost:5000/api/ask-ai", {
+      const res = await axios.post("https://ai-flow-backend2.onrender.com/api/ask-ai", {
         prompt: inputValue,
       });
       updateResult(res.data.response);
@@ -143,7 +143,7 @@ function App() {
     }
     try {
       setSaveStatus("Saving...");
-      await axios.post("http://localhost:5000/api/save", {
+      await axios.post("https://ai-flow-backend2.onrender.com/api/save", {
         prompt: inputValue,
         response: resultValue,
       });
